@@ -59,14 +59,14 @@ function Main(props) {
         </Route>
         <Route
           path="/people/:id"
-          render={(rp) => (
+          render={(rp) => 
             <Show
               people={people}
               updatePeople={updatePeople}
               deletePeople={deletePeople}
               {...rp}
             />
-          )}
+          }
         />
       </Switch>
     </main>
