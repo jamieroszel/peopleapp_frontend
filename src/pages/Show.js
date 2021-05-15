@@ -11,11 +11,14 @@ function Show(props) {
     setEditForm({ ...editForm, [event.target.name]: event.target.value })
   }
 
-  const handleSubmit = event => {
+  const handleSubmit = (event) => {
+    // to prevent refresh
     event.preventDefault()
-    props.updatePeople(editForm)
+    // update the person
+    props.updatePeople(editForm, person._id)
+    // redirect people back to index
     props.history.push("/")
-  }
+}
 
   const removePerson = () => {
     props.deletePeople(person._id)
